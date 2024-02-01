@@ -177,7 +177,7 @@ theme = "DoIt"
       #  title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
-      subtitle = "Sometimes, you found something on your mind!"
+      subtitle = "grep -nr knowledge"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
