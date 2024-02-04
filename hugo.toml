@@ -104,7 +104,7 @@ theme = "DoIt"
     #  Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "/Override.jpeg"
+      logo = "/Bear2Bear.jpeg"
       # title name
       name = "Blogs"
       # you can add extra information before the name (HTML format is supported), such as icons
@@ -171,7 +171,7 @@ theme = "DoIt"
       # URL of avatar shown in home page
       # Place your avatar file under static or assets directory
       # The filepath is relative to the static or assets directory
-      avatarURL = "/Override.jpeg"
+      avatarURL = "/Bear2Bear.jpeg"
       # URL the avatar links to
       avatarLinkURL = ""
       #  title shown in home page (HTML format is supported)
