@@ -3,9 +3,16 @@
         <title></title>
         <link>http://localhost:1313/</link>
         <description>No, you not</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Feb 2024 00:20:50 &#43;0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 11 Mar 2024 16:42:00 &#43;0700</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>PearlCTF 2024</title>
+    <link>http://localhost:1313/2024-03-11-pearlctf-wru/</link>
+    <pubDate>Mon, 11 Mar 2024 16:42:00 &#43;0700</pubDate><author>
+        <name>h4sh1334r</name>
+    </author><guid>http://localhost:1313/2024-03-11-pearlctf-wru/</guid>
+    <description><![CDATA[<p>Solution for PearlCTF 2024 challenges.</p>]]></description>
+</item><item>
     <title>VishwaMini CTF 2024</title>
     <link>http://localhost:1313/2024-02-05-vishwamini-ctf/</link>
     <pubDate>Mon, 05 Feb 2024 00:20:50 &#43;0700</pubDate><author>
