@@ -1,0 +1,70 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WriteUp - Tag - </title>
+        <link>http://localhost:1313/tags/writeup/</link>
+        <description>WriteUp - Tag - </description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Mar 2024 00:20:50 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/tags/writeup/" rel="self" type="application/rss+xml" /><item>
+    <title>VishwaCTF 2024</title>
+    <link>http://localhost:1313/2024-03-03-vishwa-ctf-2024/</link>
+    <pubDate>Sun, 03 Mar 2024 00:20:50 &#43;0700</pubDate><author>
+        <name>h4sh1334r</name>
+    </author><guid>http://localhost:1313/2024-03-03-vishwa-ctf-2024/</guid>
+    <description><![CDATA[<p>Solution for VishwaMini CTF 2024 challenges.</p>]]></description>
+</item><item>
+    <title>VishwaMini CTF 2024</title>
+    <link>http://localhost:1313/2024-02-05-vishwamini-ctf/</link>
+    <pubDate>Mon, 05 Feb 2024 00:20:50 &#43;0700</pubDate><author>
+        <name>h4sh1334r</name>
+    </author><guid>http://localhost:1313/2024-02-05-vishwamini-ctf/</guid>
+    <description><![CDATA[<p>Solution for VishwaMini CTF 2024 challenges.</p>]]></description>
+</item><item>
+    <title>IrisCTF 2024 WriteUp</title>
+    <link>http://localhost:1313/2024-08-01-irisctf-writeup/</link>
+    <pubDate>Mon, 08 Jan 2024 07:42:50 &#43;0700</pubDate><author>
+        <name>h4sh1334r</name>
+    </author><guid>http://localhost:1313/2024-08-01-irisctf-writeup/</guid>
+    <description><![CDATA[<p>Solution for IrisCTF 2024 challenges.</p>]]></description>
+</item><item>
+    <title>HackAppAtoi 2023 WriteUp</title>
+    <link>http://localhost:1313/2023-12-10-hackappatoi-ctf-writeup/</link>
+    <pubDate>Mon, 04 Dec 2023 02:16:50 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-12-10-hackappatoi-ctf-writeup/</guid>
+    <description><![CDATA[<p>Solution for HackAppAtoi 2023 challenges.</p>]]></description>
+</item><item>
+    <title>NewportBlake CTF 2023 WriteUp</title>
+    <link>http://localhost:1313/2023-12-04-newportblakectf-2023-writeup/</link>
+    <pubDate>Mon, 04 Dec 2023 02:16:50 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-12-04-newportblakectf-2023-writeup/</guid>
+    <description><![CDATA[<p>Solution for NBCTF 2023 challenges.</p>]]></description>
+</item><item>
+    <title>M*CTF 2023 WriteUp</title>
+    <link>http://localhost:1313/2023-12-02-mctf-writeup/</link>
+    <pubDate>Sat, 02 Dec 2023 02:16:50 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-12-02-mctf-writeup/</guid>
+    <description><![CDATA[<p>Solution for M*CTF challenges.</p>]]></description>
+</item><item>
+    <title>1337CTF 2023 WriteUp</title>
+    <link>http://localhost:1313/2023-11-19-1337ctf-wu/</link>
+    <pubDate>Thu, 30 Nov 2023 02:16:50 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-11-19-1337ctf-wu/</guid>
+    <description><![CDATA[<p>Some write-up for 1337CTF tournement.</p>]]></description>
+</item><item>
+    <title>EyesOpen CTF WriteUp</title>
+    <link>http://localhost:1313/2023-11-27-eyesopenctf-wu/</link>
+    <pubDate>Sun, 19 Nov 2023 02:16:50 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-11-27-eyesopenctf-wu/</guid>
+    <description><![CDATA[<p>Some write-up for EyesOpen CTF tournement.</p>]]></description>
+</item><item>
+    <title>Cookie Arena WriteUp</title>
+    <link>http://localhost:1313/2023-11-04-cookie-arena/</link>
+    <pubDate>Wed, 15 Nov 2023 01:19:58 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-11-04-cookie-arena/</guid>
+    <description><![CDATA[<p>Solution for Forensics and Stegano of CookieArena challenge.</p>]]></description>
+</item></channel>
+</rss>

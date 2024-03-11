@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>1337CTF 2023 WriteUp - </title><meta name="Description" content="Some write-up for 1337CTF tournement"><meta property="og:title" content="1337CTF 2023 WriteUp" />
+<meta property="og:description" content="Some write-up for 1337CTF tournement" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2023-11-19-1337ctf-wu/" /><meta property="og:image" content="http://localhost:1313/ryus3i.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-30T02:16:50+07:00" />
+<meta property="article:modified_time" content="2023-11-30T02:16:50+07:00" /><meta property="og:site_name" content="Hi" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/ryus3i.png" /><meta name="twitter:title" content="1337CTF 2023 WriteUp"/>
+<meta name="twitter:description" content="Some write-up for 1337CTF tournement"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/2023-11-19-1337ctf-wu/" /><link rel="prev" href="http://localhost:1313/2023-11-27-eyesopenctf-wu/" /><link rel="next" href="http://localhost:1313/2023-12-02-mctf-writeup/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "1337CTF 2023 WriteUp",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://localhost:1313/2023-11-19-1337ctf-wu/"
+        },"genre": "posts","keywords": "WriteUp","wordcount":  579 ,
+        "url": "http://localhost:1313/2023-11-19-1337ctf-wu/","datePublished": "2023-11-30T02:16:50+07:00","dateModified": "2023-11-30T02:16:50+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Bear4Ts1ck"
+            },"description": "Some write-up for 1337CTF tournement"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">1337CTF 2023 WriteUp</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">Bear4Ts1ck</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>Blog</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;579 words&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1flag-extraction">1.Flag Extraction</a></li>
+    <li><a href="#2over-the-wire-1">2.Over the Wire 1</a></li>
+    <li><a href="#3over-the-wire-2">3.Over the Wire 2</a></li>
+    <li><a href="#4-zechat-misc">4. ZeChat (Misc)</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Some write-up for 1337CTF tournement.</p>
+<h1 id="overview" class="headerLink">
+    <a href="#overview" class="header-mark"></a>Overview</h1><ul>
+<li>On the 17th-19th I participated in 1337 CTF, which was the time I participated as best I could with my team. With 1 difficult challenge, I stayed up until 4am looking for materials and missed the test. Both happy and sad. I&rsquo;ll try harder anyway. Thank you to everyone on the team for supporting me.</li>
+</ul>
+<h1 id="solution" class="headerLink">
+    <a href="#solution" class="header-mark"></a>Solution</h1><h2 id="1flag-extraction" class="headerLink">
+    <a href="#1flag-extraction" class="header-mark"></a>1.Flag Extraction</h2><ul>
+<li><a href="/https://ctf.intigriti.io/challenges#Over%20the%20Wire%20%28part%201%29-42/" rel="">Challenge link</a></li>
+</ul>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/FlagExtraction/gif.png"
+        srcset="/1337/FlagExtraction/gif.png, /1337/FlagExtraction/gif.png 1.5x, /1337/FlagExtraction/gif.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+<ul>
+<li>
+<p>Downloading the challenge, I get 1 rar file, then 1 string of tar files, I guess I extract 1 continuous sequence of file types. Use 7zip or whatever you can. At the end we get 1 gif file.</p>
+</li>
+<li>
+<p>Try strings &ldquo;name-file.gif&rdquo; | grep &ldquo;INTIGRI&rdquo;
+. Got flag:</p>
+<p>-&gt; <em>INTIGRITI{fl46_3x7r4c710n_c0mpl373}</em></p>
+</li>
+</ul>
+<br>
+<h2 id="2over-the-wire-1" class="headerLink">
+    <a href="#2over-the-wire-1" class="header-mark"></a>2.Over the Wire 1</h2><ul>
+<li>
+<p><a href="/https://ctf.intigriti.io/challenges#Over%20the%20Wire%20%28part%201%29-42/" rel="">Challenge Link</a></p>
+</li>
+<li>
+<p>I get 1 pcap file. People can have many ways but I use Wireshark. As always, I use tcp containing &ldquo;flags&rdquo; to check the flow of the file. I noticed 1 thread has info : RETR flag.zip.</p>
+</li>
+<li>
+<p>Quickly follow that stream and I see some important information.</p>
+</li>
+</ul>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/OverTheWire1/1.png"
+        srcset="/1337/OverTheWire1/1.png, /1337/OverTheWire1/1.png 1.5x, /1337/OverTheWire1/1.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+<ul>
+<li>
+<p>I was going to try File -&gt; Export Objects, but there doesn&rsquo;t seem to be anything in it. The only usable thing here is the password I found above. Then I tried : strings name-file.pcap | grep &ldquo;flag&rdquo; and getting 2 line seems to be a clue
+.</p>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/OverTheWire1/2.png"
+        srcset="/1337/OverTheWire1/2.png, /1337/OverTheWire1/2.png 1.5x, /1337/OverTheWire1/2.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>The first is &ldquo;flag.txt&rdquo;. I used the binwalk with the pcap file and actually got 1 zip file. &ldquo;Foremost&rdquo; file pcap to receive the zip file, but it requires a key.I tried using the original password I found to open but failed. With the line &ldquo;This flag is really important so I had to encrypt it in case it falls into the wrong hands&rdquo; I reopen the wireshark and check which stream it belongs to. I got 1 message :</p>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/OverTheWire1/3.png"
+        srcset="/1337/OverTheWire1/3.png, /1337/OverTheWire1/3.png 1.5x, /1337/OverTheWire1/3.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>I thought for a while and tried changing 2022 in the password to 2023 and got the flag :</p>
+<p>-&gt; <em>INTIGRITI{1f_0nly_7h3r3_w45_4_53cur3_FTP}</em></p>
+</li>
+</ul>
+<br>
+<h2 id="3over-the-wire-2" class="headerLink">
+    <a href="#3over-the-wire-2" class="header-mark"></a>3.Over the Wire 2</h2><ul>
+<li>
+<p><a href="/https://ctf.intigriti.io/challenges#Over%20the%20Wire%20%28part%202%29-45/" rel="">Challenge Link</a></p>
+</li>
+<li>
+<p>Another pcap challenge. I did the same as season 1 but got nothing. I tried again with File -&gt; Export Objects. This time in the IMF section I see 4 .eml files. Try saving them all and viewing each file 1 (remember to save the file with the eml extension for easier reading). The first 2 files are nothing, just normal messages. 2 files after each file have 1 photo. I tried to download each photo and used the Stegano tools to see if I got anything. And in the 2nd image, I used the &ldquo;binwalk&rdquo; to check and saw that there was a zlib file . Using &ldquo;zsteg&rdquo; to check, we get the flag:</p>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/OverTheWire2/1.png"
+        srcset="/1337/OverTheWire2/1.png, /1337/OverTheWire2/1.png 1.5x, /1337/OverTheWire2/1.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+<p>-&gt; <em>INTIGRITI{H1dd3n_Crypt0Cat_Purr}</em></p>
+</li>
+</ul>
+<br>
+<h2 id="4-zechat-misc" class="headerLink">
+    <a href="#4-zechat-misc" class="header-mark"></a>4. ZeChat (Misc)</h2><ul>
+<li>
+<p><figure><img
+        
+        loading="lazy"
+        src="/1337/ZeChat/zechat.png"
+        srcset="/1337/ZeChat/zechat.png, /1337/ZeChat/zechat.png 1.5x, /1337/ZeChat/zechat.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>This was honestly one of the hardest challenges I&rsquo;ve ever done. Only 7 teams solved this challenge, not including my team. I spent up to 8 hours solving this challenge by hand, including reading the article. You can read <a href="https://hackmd.io/@Chivato/SkN3Piyan" target="_blank" rel="noopener noreferrer">Chivato&rsquo;s article</a> to solve this problem.
+The binary string that I execute is:</p>
+<p><code>01001001 01001110 010101000 10010010 1000111 01010010 01001001 01010100 010010 0101111011 0111011100 1100110110 0011011010 0000110100 0011011101 0111110110 0100001101 0000110111 0011010001 0111110011 0011011011 1001 1000110011 0000011 001 0000110001 0110111000 1101100101 1111011001 1001110100 01 11011100 1000010010 0001001000 0101111101</code></p>
+<p>-&gt; Flag : INTIGRITI{w3ch47_d474_3nc0d1n6_ftw!!!}
+<br></p>
+<p>*Note: If you&rsquo;re having trouble knowing where to start? And, I may have omitted some locations in the picture so my results may be a bit misleading. Please contact me if you encounter any of the above two situations or you have any other questions.</p>
+</li>
+</ul></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-11-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/writeup/">WriteUp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2023-11-27-eyesopenctf-wu/" class="prev" rel="prev" title="EyesOpen CTF WriteUp"><i class="fas fa-angle-left fa-fw"></i>EyesOpen CTF WriteUp</a>
+            <a href="/2023-12-02-mctf-writeup/" class="next" rel="next" title="M*CTF 2023 WriteUp">M*CTF 2023 WriteUp<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.123.8">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">h4sh1334r</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

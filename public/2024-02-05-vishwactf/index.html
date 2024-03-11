@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>VishwaMini CTF 2024 - </title><meta name="Description" content="Solution for VishwaMini CTF 2024 challenges"><meta property="og:title" content="VishwaMini CTF 2024" />
+<meta property="og:description" content="Solution for VishwaMini CTF 2024 challenges" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2024-02-05-vishwactf/" /><meta property="og:image" content="http://localhost:1313/ryus3i.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-05T00:20:50+07:00" />
+<meta property="article:modified_time" content="2024-02-05T00:20:50+07:00" /><meta property="og:site_name" content="Hi" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/ryus3i.png" /><meta name="twitter:title" content="VishwaMini CTF 2024"/>
+<meta name="twitter:description" content="Solution for VishwaMini CTF 2024 challenges"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/2024-02-05-vishwactf/" /><link rel="prev" href="http://localhost:1313/2024-08-01-irisctf-writeup/" /><link rel="next" href="http://localhost:1313/2024-03-03-vishwa-ctf-2024/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "VishwaMini CTF 2024",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://localhost:1313/2024-02-05-vishwactf/"
+        },"genre": "posts","keywords": "WriteUp","wordcount":  412 ,
+        "url": "http://localhost:1313/2024-02-05-vishwactf/","datePublished": "2024-02-05T00:20:50+07:00","dateModified": "2024-02-05T00:20:50+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "h4sh1334r"
+            },"description": "Solution for VishwaMini CTF 2024 challenges"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">VishwaMini CTF 2024</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">h4sh1334r</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>Blog</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-02-05">2024-02-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;412 words&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#solution">Solution</a>
+      <ul>
+        <li><a href="#1-announcement-osint">1. Announcement (Osint)</a></li>
+        <li><a href="#2area96-stegano">2.Area96 (Stegano)</a></li>
+        <li><a href="#3murder-mystery-osint">3.Murder Mystery (Osint)</a></li>
+        <li><a href="#4-im-a-peaky-blinder-osint">4. I&rsquo;m a Peaky Blinder (Osint)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Solution for VishwaMini CTF 2024 challenges.</p>
+<h2 id="overview" class="headerLink">
+    <a href="#overview" class="header-mark"></a>Overview</h2><ul>
+<li>I&rsquo;ve been waiting a long time to participate in a CTF tournament since IrisCTF in January. The days passed without CTF slowly like &ldquo;waiting for the fish to take the bait&rdquo; haha. Anyway, it&rsquo;s time for me to look back at myself. In this tournament, I only did 2 challenges, the rest were thanks to the reveal at the end of the tournament. Thank you for reading.</li>
+</ul>
+<h2 id="solution" class="headerLink">
+    <a href="#solution" class="header-mark"></a>Solution</h2><h3 id="1-announcement-osint" class="headerLink">
+    <a href="#1-announcement-osint" class="header-mark"></a>1. Announcement (Osint)</h3><ul>
+<li>
+<p>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/Announcement/Announcement.png"
+        srcset="/VishwaCTF/Announcement/Announcement.png, /VishwaCTF/Announcement/Announcement.png 1.5x, /VishwaCTF/Announcement/Announcement.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>I searched for &ldquo;CyberCell VIIT announces VishwaCTF 2024 Mini&rdquo; and in an <a href="https://www.instagram.com/reel/C2txmkqLVJn/" target="_blank" rel="noopener noreferrer">Instagram post</a>, i got the flag .
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/Announcement/flag1.png"
+        srcset="/VishwaCTF/Announcement/flag1.png, /VishwaCTF/Announcement/flag1.png 1.5x, /VishwaCTF/Announcement/flag1.png 2x"
+        alt="Smile"
+        title="Smile" ></figure>
+-&gt; flag : <em>VishwaCTF{m1n1_i5_h3r3_l3t_th3_c0untd0wn_b3g1n}</em></p>
+</li>
+</ul>
+<h3 id="2area96-stegano" class="headerLink">
+    <a href="#2area96-stegano" class="header-mark"></a>2.Area96 (Stegano)</h3><ul>
+<li>
+<p>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/Area96/Area96.png"
+        srcset="/VishwaCTF/Area96/Area96.png, /VishwaCTF/Area96/Area96.png 1.5x, /VishwaCTF/Area96/Area96.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>This is the most confusing challenge because the organizers initially gave 3 files including 1 wav file and 2 zip files. I was about to give up, but after the organizers changed the topic, I didn&rsquo;t understand what the remaining 3 files were for, because the flag was only in 1 file. I used <code>stegseek</code> to extract hidden files in the image and got the flag right away. It&rsquo;s hard to understand!</p>
+<p>-&gt; flag : <em>VishwaCTF{BeepBoop_Jaadu}</em></p>
+</li>
+</ul>
+<p><br> <em>Note: File of this challenge in /static/VishwaCTF/Area96 dir. Thanks</em></p>
+<h3 id="3murder-mystery-osint" class="headerLink">
+    <a href="#3murder-mystery-osint" class="header-mark"></a>3.Murder Mystery (Osint)</h3><ul>
+<li>
+<p>Challenge
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/MurderMistery/Murder-Mistery.png"
+        srcset="/VishwaCTF/MurderMistery/Murder-Mistery.png, /VishwaCTF/MurderMistery/Murder-Mistery.png 1.5x, /VishwaCTF/MurderMistery/Murder-Mistery.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>In the received letter we see a part that looks like a barcode. After searching I found out it was <em>IMb barcode</em>. You can see the explanation below :
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/MurderMistery/IMb-Barcode.png"
+        srcset="/VishwaCTF/MurderMistery/IMb-Barcode.png, /VishwaCTF/MurderMistery/IMb-Barcode.png 1.5x, /VishwaCTF/MurderMistery/IMb-Barcode.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>I did it by hand and got the following chain: <code>ATTTFTADAFFTDTTAADTDTTATDAFDDDATATDDDDTADFAFADFATATFDFADDFFAFATDT </code>.
+<br>After decoding by this web,I have this but I couldn&rsquo;t think about anything else.
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/MurderMistery/IMb-decode.png"
+        srcset="/VishwaCTF/MurderMistery/IMb-decode.png, /VishwaCTF/MurderMistery/IMb-decode.png 1.5x, /VishwaCTF/MurderMistery/IMb-decode.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>After the tournament ended, I known that I needed to combine all the numbers given by the barcode and convert them to ASCII. The string I get after merging: <code>101 118 105 108 95 115 104 97 100 111 119</code> . And after conversion we get the flag:</p>
+<p>-&gt; flag : <em>VishwaCTF{evil_shadow}</em></p>
+</li>
+</ul>
+<h3 id="4-im-a-peaky-blinder-osint" class="headerLink">
+    <a href="#4-im-a-peaky-blinder-osint" class="header-mark"></a>4. I&rsquo;m a Peaky Blinder (Osint)</h3><ul>
+<li>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/PeakyBlinder/Peaky-Blinder.png"
+        srcset="/VishwaCTF/PeakyBlinder/Peaky-Blinder.png, /VishwaCTF/PeakyBlinder/Peaky-Blinder.png 1.5x, /VishwaCTF/PeakyBlinder/Peaky-Blinder.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>I tried copying the entire introduction and realized it was part of a song from the recent famous movie &lsquo;Peaky Blinder&rsquo;. The film&rsquo;s popularity cannot be disputed.
+Back to the challenge, the last part of the introduction is an Insta account. For each photo we will receive a portion of a <a href="https://www.facebook.com/profile.php?id=61554610571803&amp;mibextid=hIlR13" target="_blank" rel="noopener noreferrer">Facebook account</a>. Which takes us to that page, at the bottom of the page is another Insta account.
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/PeakyBlinder/PB-Insta.png"
+        srcset="/VishwaCTF/PeakyBlinder/PB-Insta.png, /VishwaCTF/PeakyBlinder/PB-Insta.png 1.5x, /VishwaCTF/PeakyBlinder/PB-Insta.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>In the new insta page just received,look carefully at each photo and see that there is a question there. The flag we receive is the answer to the question.
+<figure><img
+        
+        loading="lazy"
+        src="/VishwaCTF/PeakyBlinder/flag4.png"
+        srcset="/VishwaCTF/PeakyBlinder/flag4.png, /VishwaCTF/PeakyBlinder/flag4.png 1.5x, /VishwaCTF/PeakyBlinder/flag4.png 2x"
+        alt="Smile"
+        title="Smile" ></figure>
+-&gt; flag: <em>VishwaCTF{The_Garrison}</em></li>
+</ul></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-02-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/writeup/">WriteUp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2024-08-01-irisctf-writeup/" class="prev" rel="prev" title="IrisCTF 2024 WriteUp"><i class="fas fa-angle-left fa-fw"></i>IrisCTF 2024 WriteUp</a>
+            <a href="/2024-03-03-vishwa-ctf-2024/" class="next" rel="next" title="VishwaCTF 2024">VishwaCTF 2024<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.123.7">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">h4sh1334r</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

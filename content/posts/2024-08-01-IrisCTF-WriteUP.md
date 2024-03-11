@@ -1,5 +1,5 @@
 ---
-title: "IrisCTF 2024"
+title: "IrisCTF 2024 WriteUp"
 date: 2024-01-08T07:42:50+07:00
 draft: false
 author: "h4sh1334r"
@@ -7,6 +7,8 @@ description: "Solution for IrisCTF 2024 challenges"
 tags: ["WriteUp"]
 categories: ["blog"]
 ---
+
+Solution for IrisCTF 2024 challenges.
 
 <!--more-->
 
