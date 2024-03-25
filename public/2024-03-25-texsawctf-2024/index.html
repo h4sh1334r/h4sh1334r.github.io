@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Writeup for TexsawCTF 2024 - </title><meta name="Description" content="Writeup for TexsawCTF 2024 challenges"><meta property="og:title" content="Writeup for TexsawCTF 2024" />
+<meta property="og:description" content="Writeup for TexsawCTF 2024 challenges" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2024-03-25-texsawctf-2024/" /><meta property="og:image" content="http://localhost:1313/ryus3i.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-25T17:31:00+07:00" />
+<meta property="article:modified_time" content="2024-03-25T17:31:00+07:00" /><meta property="og:site_name" content="Hi" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/ryus3i.png" /><meta name="twitter:title" content="Writeup for TexsawCTF 2024"/>
+<meta name="twitter:description" content="Writeup for TexsawCTF 2024 challenges"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/2024-03-25-texsawctf-2024/" /><link rel="prev" href="http://localhost:1313/2024-03-25-texsawctf-wru/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Writeup for TexsawCTF 2024",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://localhost:1313/2024-03-25-texsawctf-2024/"
+        },"genre": "posts","keywords": "forensics,osint","wordcount":  554 ,
+        "url": "http://localhost:1313/2024-03-25-texsawctf-2024/","datePublished": "2024-03-25T17:31:00+07:00","dateModified": "2024-03-25T17:31:00+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "h4sh1334r"
+            },"description": "Writeup for TexsawCTF 2024 challenges"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><img
+        class="logo"
+        loading="lazy"
+        src="/Bear2Bear.jpeg"
+        srcset="/Bear2Bear.jpeg, /Bear2Bear.jpeg 1.5x, /Bear2Bear.jpeg 2x"
+        alt="/Bear2Bear.jpeg"
+        title="/Bear2Bear.jpeg" >Blogs</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Writeup for TexsawCTF 2024</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="/" title="Author" rel=" author" class="author">h4sh1334r</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">categories <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>Blog</a>&nbsp;<a href="/categories/writeup/"><i class="far fa-folder fa-fw"></i>Writeup</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-03-25">2024-03-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;554 words&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#solution">Solution</a>
+      <ul>
+        <li><a href="#1-osintgeo-location">1. Osint/Geo-Location</a></li>
+        <li><a href="#2-forensicsthe-forked-cave">2. Forensics/The Forked Cave</a></li>
+        <li><a href="#3-forensicsps2-games">3. Forensics/PS2 games</a></li>
+        <li><a href="#4-cryptofreaky-flags">4. Crypto/Freaky Flags</a></li>
+        <li><a href="#5-osinttrickytree">5. Osint/TrickyTree</a></li>
+        <li><a href="#6-forensicsmarket-data">6. Forensics/Market Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="overview" class="headerLink">
+    <a href="#overview" class="header-mark"></a>Overview</h2><ul>
+<li>
+<p>Although the challenges of the tournament look simple, they are actually quite difficult and my way of doing things is also very stupid lol. Some challenges I even did manually. It takes several hours for them. Really had a sleepless night with my team - <a href="https://ctftime.org/team/127635" target="_blank" rel="noopener noreferrer">Huntik</a>. Anyway, thanks for reading and have a great day!</p>
+</li>
+<li>
+<p><b> Note : <em>Data file in my blogs/static/Texsaw2024 dir</em> </b></p>
+</li>
+</ul>
+<h2 id="solution" class="headerLink">
+    <a href="#solution" class="header-mark"></a>Solution</h2><h3 id="1-osintgeo-location" class="headerLink">
+    <a href="#1-osintgeo-location" class="header-mark"></a>1. Osint/Geo-Location</h3><ul>
+<li>
+<p>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Geo-location/Chall.png"
+        srcset="/TexsawCTF%202024/Geo-location/Chall.png, /TexsawCTF%202024/Geo-location/Chall.png 1.5x, /TexsawCTF%202024/Geo-location/Chall.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>PNG file:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Geo-location/picture.jpg"
+        srcset="/TexsawCTF%202024/Geo-location/picture.jpg, /TexsawCTF%202024/Geo-location/picture.jpg 1.5x, /TexsawCTF%202024/Geo-location/picture.jpg 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>Using GG image and focusing on the large building in the photo, we can see a number of matching images.
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Geo-location/CheckGGimg.png"
+        srcset="/TexsawCTF%202024/Geo-location/CheckGGimg.png, /TexsawCTF%202024/Geo-location/CheckGGimg.png 1.5x, /TexsawCTF%202024/Geo-location/CheckGGimg.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>I later identified it as the <code>TCC Legacy Kincaid building</code>. Check GG map and you will see it matches the image. It is located on Legacy Street,Texas.</p>
+<p>-&gt; flag : <b><em>texsaw{LEGACY_DRIVE}</em></b></p>
+</li>
+</ul>
+<h3 id="2-forensicsthe-forked-cave" class="headerLink">
+    <a href="#2-forensicsthe-forked-cave" class="header-mark"></a>2. Forensics/The Forked Cave</h3><ul>
+<li>Challenge:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/The%20Forked%20Cave/Chall.png"
+        srcset="/TexsawCTF%202024/The%20Forked%20Cave/Chall.png, /TexsawCTF%202024/The%20Forked%20Cave/Chall.png 1.5x, /TexsawCTF%202024/The%20Forked%20Cave/Chall.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>The challenge gives us a git directory. Because I&rsquo;ve done a similar challenge before, I used <code>git log</code> to check:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/The%20Forked%20Cave/GitLog.png"
+        srcset="/TexsawCTF%202024/The%20Forked%20Cave/GitLog.png, /TexsawCTF%202024/The%20Forked%20Cave/GitLog.png 1.5x, /TexsawCTF%202024/The%20Forked%20Cave/GitLog.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>And <code>git diff 02589c89210a9718a03992eec1a7da85e15c7c7d 9c6d7b5d77ba2f73fca83d026de1fe7904ce6e0b</code> . We get the flag:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/The%20Forked%20Cave/GitDiff.png"
+        srcset="/TexsawCTF%202024/The%20Forked%20Cave/GitDiff.png, /TexsawCTF%202024/The%20Forked%20Cave/GitDiff.png 1.5x, /TexsawCTF%202024/The%20Forked%20Cave/GitDiff.png 2x"
+        alt="Smile"
+        title="Smile" ></figure>
+-&gt; flag: <b><em>texsaw{git_g00d_or_git_d3ath}</em></b></li>
+</ul>
+<h3 id="3-forensicsps2-games" class="headerLink">
+    <a href="#3-forensicsps2-games" class="header-mark"></a>3. Forensics/PS2 games</h3><ul>
+<li>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/PS2%20games/Chall.png"
+        srcset="/TexsawCTF%202024/PS2%20games/Chall.png, /TexsawCTF%202024/PS2%20games/Chall.png 1.5x, /TexsawCTF%202024/PS2%20games/Chall.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>My initial idea was to use code to filter out all games between <code>2000-2009</code>, then check their <code>platform-id</code>. But after solving the challenge that way, I tried <code>Workbench</code> and it was much simpler. Just with the following SQL code:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">Games</span><span class="p">.</span><span class="n">game_id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_games</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">Games</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">GamePlatforms</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Games</span><span class="p">.</span><span class="n">game_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GamePlatforms</span><span class="p">.</span><span class="n">game_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">Platforms</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">GamePlatforms</span><span class="p">.</span><span class="n">platform_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Platforms</span><span class="p">.</span><span class="n">platform_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">Platforms</span><span class="p">.</span><span class="n">platform_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Playstation&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">AND</span><span class="w"> </span><span class="k">YEAR</span><span class="p">(</span><span class="n">Games</span><span class="p">.</span><span class="n">release_date</span><span class="p">)</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">2009</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>And got the flag
+-&gt; flag : <b><em>texsaw{42}</em></b></li>
+</ul>
+<h3 id="4-cryptofreaky-flags" class="headerLink">
+    <a href="#4-cryptofreaky-flags" class="header-mark"></a>4. Crypto/Freaky Flags</h3><ul>
+<li>
+<p>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Freaky%20Flags/chall.png"
+        srcset="/TexsawCTF%202024/Freaky%20Flags/chall.png, /TexsawCTF%202024/Freaky%20Flags/chall.png 1.5x, /TexsawCTF%202024/Freaky%20Flags/chall.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>PNG file:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Freaky%20Flags/freakyFlags.png"
+        srcset="/TexsawCTF%202024/Freaky%20Flags/freakyFlags.png, /TexsawCTF%202024/Freaky%20Flags/freakyFlags.png 1.5x, /TexsawCTF%202024/Freaky%20Flags/freakyFlags.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>Luckily, I had just learned HTML and used <a href="https://redketchup.io/color-picker" target="_blank" rel="noopener noreferrer">Color Identity</a> to determine the color of an image, so I immediately thought of trying it out. Each color will have 3 RGB values and I try to put them into ASCII decode. It works and I get the flag.
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Freaky%20Flags/Decode.png"
+        srcset="/TexsawCTF%202024/Freaky%20Flags/Decode.png, /TexsawCTF%202024/Freaky%20Flags/Decode.png 1.5x, /TexsawCTF%202024/Freaky%20Flags/Decode.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+<p>-&gt; flag : <b><em>texsaw{the_flag_is_the_flag!}</em></b></p>
+</li>
+</ul>
+<h3 id="5-osinttrickytree" class="headerLink">
+    <a href="#5-osinttrickytree" class="header-mark"></a>5. Osint/TrickyTree</h3><ul>
+<li>
+<p>Challenge:</p>
+</li>
+<li>
+<p>A challenge that I initially thought I would give up on. But when there were about 5-6 hours left in the competition, I tried again. And this time thanks to the predecessors of the challenge, I have <a href="https://www.familytreenow.com/trees/715273" target="_blank" rel="noopener noreferrer">this link</a> :
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/TrickyTree/Link.png"
+        srcset="/TexsawCTF%202024/TrickyTree/Link.png, /TexsawCTF%202024/TrickyTree/Link.png 1.5x, /TexsawCTF%202024/TrickyTree/Link.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>But guess what, of course it&rsquo;s not that easy. I tried using a wayback machine but it didn&rsquo;t work very well. Suddenly I thought of a website I used from the <code>0xL4ugh tournament</code>, which is <code>Archive.Today</code>. I tried copying the link I just received and got the results:
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/TrickyTree/ArchiveToday.png"
+        srcset="/TexsawCTF%202024/TrickyTree/ArchiveToday.png, /TexsawCTF%202024/TrickyTree/ArchiveToday.png 1.5x, /TexsawCTF%202024/TrickyTree/ArchiveToday.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></p>
+</li>
+<li>
+<p>Click to see and we will see his father&rsquo;s name. View profile and get date of birth.Thank all players who went first.
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/TrickyTree/FatherDOB.png"
+        srcset="/TexsawCTF%202024/TrickyTree/FatherDOB.png, /TexsawCTF%202024/TrickyTree/FatherDOB.png 1.5x, /TexsawCTF%202024/TrickyTree/FatherDOB.png 2x"
+        alt="Smile"
+        title="Smile" ></figure>
+-&gt; flag : <b><em>texsaw{09_02_1985}</em></b></p>
+</li>
+</ul>
+<h3 id="6-forensicsmarket-data" class="headerLink">
+    <a href="#6-forensicsmarket-data" class="header-mark"></a>6. Forensics/Market Data</h3><ul>
+<li>Challenge :
+<figure><img
+        
+        loading="lazy"
+        src="/TexsawCTF%202024/Marked%20Data/Chall.png"
+        srcset="/TexsawCTF%202024/Marked%20Data/Chall.png, /TexsawCTF%202024/Marked%20Data/Chall.png 1.5x, /TexsawCTF%202024/Marked%20Data/Chall.png 2x"
+        alt="Smile"
+        title="Smile" ></figure></li>
+<li>I use the following SQL code to filter and get the correct results:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">revenue</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_revenue</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">od</span><span class="p">.</span><span class="n">game_id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">SUM</span><span class="p">(</span><span class="n">od</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">od</span><span class="p">.</span><span class="n">subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">revenue</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">od</span><span class="p">.</span><span class="n">quantity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">od</span><span class="p">.</span><span class="n">subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">revenue_rank</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">OrderDetails</span><span class="w"> </span><span class="n">od</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">JOIN</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Games</span><span class="w"> </span><span class="k">g</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">od</span><span class="p">.</span><span class="n">game_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">game_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">JOIN</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Genres</span><span class="w"> </span><span class="n">ge</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">genre_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge</span><span class="p">.</span><span class="n">genre_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">JOIN</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">od</span><span class="p">.</span><span class="n">order_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">order_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHERE</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ge</span><span class="p">.</span><span class="n">genre_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Action&#39;</span><span class="w"> </span><span class="c1">-- Filter by Action genre
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="k">AND</span><span class="w"> </span><span class="k">YEAR</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">order_date</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2023</span><span class="w"> </span><span class="c1">-- Filter orders from 2023
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">od</span><span class="p">.</span><span class="n">game_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">revenue_by_game</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">revenue_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Select the 5th ranked game&#39;s revenue
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Submit and it worked:</p>
+<p>-&gt; flag : <b><em>texsaw{247.16}</em></b></p>
+</li>
+</ul></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-03-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=""></a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2024-03-25-texsawctf-wru/" class="prev" rel="prev" title="Writeup for TexsawCTF 2024"><i class="fas fa-angle-left fa-fw"></i>Writeup for TexsawCTF 2024</a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.124.1">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">h4sh1334r</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>
