@@ -79,6 +79,3 @@ and we found:
 - Scanned the QR code and received the flag:   
     -> *CHH{Im4g3_1n_1m@gE_1s_n1c3!!}*
 
-### 2.Can u see me ?
-
-- Full solve: Steganography - Can You See Me

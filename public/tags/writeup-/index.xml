@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WriteUp,  - Tag - </title>
+        <link>http://localhost:1313/tags/writeup-/</link>
+        <description>WriteUp,  - Tag - </description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 15 Nov 2023 01:19:58 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/tags/writeup-/" rel="self" type="application/rss+xml" /><item>
+    <title>Cookie Arena WriteUp</title>
+    <link>http://localhost:1313/2023-11-04-cookie-arena/</link>
+    <pubDate>Wed, 15 Nov 2023 01:19:58 &#43;0700</pubDate><author>
+        <name>Bear4Ts1ck</name>
+    </author><guid>http://localhost:1313/2023-11-04-cookie-arena/</guid>
+    <description><![CDATA[<p>Solution for Forensics and Stegano of CookieArena challenge.</p>]]></description>
+</item></channel>
+</rss>

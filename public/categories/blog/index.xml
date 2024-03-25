@@ -9,6 +9,13 @@
     <pubDate>Mon, 11 Mar 2024 22:50:00 &#43;0700</pubDate><author>
         <name>h4sh1334r</name>
     </author><guid>http://localhost:1313/2024-03-11-sharktictf-osint-wru/</guid>
+    <description><![CDATA[Overview ShaktiCTF and PearlCTF happened around the same time I had my exams, so I couldn&rsquo;t focus too much on either of them. This was the only Osint challenge I did in the tournament. I transferred some files on my computer and deleted the question part of the challenge even though I solved it during the time it took place. I took all the questions of the challenge from the article of Mr.]]></description>
+</item><item>
+    <title>Writeup for Osint/Ocean_Enigma - ShaktiCTF 2024</title>
+    <link>http://localhost:1313/2024-03-25-texsawctf-wru/</link>
+    <pubDate>Mon, 11 Mar 2024 22:50:00 &#43;0700</pubDate><author>
+        <name>h4sh1334r</name>
+    </author><guid>http://localhost:1313/2024-03-25-texsawctf-wru/</guid>
     <description><![CDATA[Writeup for Osint/Ocean_Enigma - ShaktiCTF 2024]]></description>
 </item><item>
     <title>PearlCTF 2024</title>
@@ -26,10 +33,10 @@
     <description><![CDATA[<p>Solution for VishwaMini CTF 2024 challenges.</p>]]></description>
 </item><item>
     <title>IrisCTF 2024 WriteUp</title>
-    <link>http://localhost:1313/2024-08-01-irisctf-writeup/</link>
+    <link>http://localhost:1313/2024-01-08-irisctf-writeup/</link>
     <pubDate>Mon, 08 Jan 2024 07:42:50 &#43;0700</pubDate><author>
         <name>h4sh1334r</name>
-    </author><guid>http://localhost:1313/2024-08-01-irisctf-writeup/</guid>
+    </author><guid>http://localhost:1313/2024-01-08-irisctf-writeup/</guid>
     <description><![CDATA[<p>Solution for IrisCTF 2024 challenges.</p>]]></description>
 </item><item>
     <title>HackAppAtoi 2023 WriteUp</title>
@@ -66,12 +73,5 @@
         <name>Bear4Ts1ck</name>
     </author><guid>http://localhost:1313/2023-11-27-eyesopenctf-wu/</guid>
     <description><![CDATA[<p>Some write-up for EyesOpen CTF tournement.</p>]]></description>
-</item><item>
-    <title>Cookie Arena WriteUp</title>
-    <link>http://localhost:1313/2023-11-04-cookie-arena/</link>
-    <pubDate>Wed, 15 Nov 2023 01:19:58 &#43;0700</pubDate><author>
-        <name>Bear4Ts1ck</name>
-    </author><guid>http://localhost:1313/2023-11-04-cookie-arena/</guid>
-    <description><![CDATA[<p>Solution for Forensics and Stegano of CookieArena challenge.</p>]]></description>
 </item></channel>
 </rss>
